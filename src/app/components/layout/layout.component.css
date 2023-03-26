@@ -1,0 +1,24 @@
+:host {
+    width: 100%;
+}
+
+.app-layout-container {
+    height: calc(100vh - 56px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-container {
+    height: calc(100vh - 56px);
+    width: 100%;
+    overflow-y: scroll;
+    padding: 20px 0;
+}
+
+section {
+    display: flex;
+    padding: 30px;
+    justify-content: space-between;
+    max-width: 1200px;
+}

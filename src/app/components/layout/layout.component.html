@@ -1,0 +1,18 @@
+<div class="app-layout-container">
+  <div *ngIf="isLoading; else showStudents">
+    <app-spinner></app-spinner>
+  </div>
+
+  <ng-template #showStudents>
+    <div class="section-container">
+      <section *ngFor="let student of studentsList">
+          <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="../../../assets/places-images/glaciar-perito-moreno.webp" width="150px" height="150px" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">{{ student.firstName + ' ' + student.lastName  }}</h5>
+              </div>
+          </div>
+      </section>
+    </div>
+  </ng-template>
+</div>
