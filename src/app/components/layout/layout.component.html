@@ -5,11 +5,17 @@
 
   <ng-template #showStudents>
     <div class="section-container">
-      <section *ngFor="let student of studentsList">
-          <div class="card" style="width: 18rem;">
-              <img class="card-img-top" src="../../../assets/places-images/glaciar-perito-moreno.webp" width="150px" height="150px" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">{{ student.firstName + ' ' + student.lastName  }}</h5>
+      <section>
+          <div *ngFor="let student of studentsList" class="card mb-4" style="width: 15rem;">
+              <img class="card-img-top" src="../../../assets/profile-default.webp" width="100px" height="150px" alt="Card image cap">
+              <div class="student-data">
+                <strong>{{ student.firstName + ' ' + student.lastName  }}</strong>
+                <span>DNI: {{ student.id }}</span>
+                <span>Fecha de entrega: {{ student.date_of_delivery | date:"dd/MM/yy" }}</span>
+                <span>Final: {{ student.qualification }}</span>
+                <span [ngClass]="student.isApproved ? 'approved' : 'not-approved'">
+                  {{ student.isApproved ? '¡Aprobado!' : 'Desaprobado' | uppercase }}
+                </span>
               </div>
           </div>
       </section>
